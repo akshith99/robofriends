@@ -9,13 +9,13 @@ class ErrorBoundary extends Component {
         }
     }
 
-    componentDidCatch(){
+    componentDidCatch(error, info){
         this.setState({hasErrors: true})
     }
 
     render(){
         if(this.state.hasErrors){
-            return <h1>Ooops.. That is not good</h1>
+            return <h1>Ooops. This is not good</h1>
         }
         return this.props.children
     }
